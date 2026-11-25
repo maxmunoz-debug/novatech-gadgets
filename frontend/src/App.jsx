@@ -712,8 +712,7 @@ export default function App() {
       {/* FOOTER */}
       <footer className="py-4 mt-auto" style={{ backgroundColor: '#0B111E', borderTop: '1px solid #23536F' }}>
         <div className="container d-flex flex-wrap justify-content-between align-items-center small" style={{ color: '#8DB5C7' }}>
-          <span>© 2026 NovaTech Gadgets — Laboratorio N° 13 (Desarrollo de Aplicaciones Empresariales)</span>
-          <span>Paleta Corporativa: #0B111E • #132B47 • #23536F • #8DB5C7 • #F0EFEA</span>
+          <span>© 2026 NovaTech Gadgets. Todos los derechos reservados.</span>
         </div>
       </footer>
     </div>
