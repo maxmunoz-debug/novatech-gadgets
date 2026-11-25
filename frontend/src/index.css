@@ -1,0 +1,110 @@
+:root {
+  --nova-bg: #0B111E;         /* Color 1: Azul Noche Profundo */
+  --nova-card: #132B47;       /* Color 2: Azul Marino Oscuro */
+  --nova-primary: #23536F;    /* Color 3: Azul Petróleo */
+  --nova-accent: #8DB5C7;     /* Color 4: Azul Hielo */
+  --nova-text: #F0EFEA;       /* Color 5: Blanco Marfil */
+  --nova-muted: #A9C2CE;
+}
+
+body {
+  background-color: var(--nova-bg);
+  color: var(--nova-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.nova-navbar {
+  background: rgba(11, 17, 30, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nova-primary);
+}
+
+.nova-hero {
+  background: linear-gradient(135deg, #0B111E 0%, #132B47 50%, #23536F 100%);
+  border-bottom: 1px solid var(--nova-primary);
+}
+
+.nova-card {
+  background-color: var(--nova-card);
+  border: 1px solid var(--nova-primary);
+  border-radius: 14px;
+  color: var(--nova-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.nova-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--nova-accent);
+  box-shadow: 0 12px 24px rgba(141, 181, 199, 0.18);
+}
+
+.nova-btn-primary {
+  background-color: var(--nova-primary);
+  border: 1px solid var(--nova-accent);
+  color: var(--nova-text);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nova-btn-primary:hover:not(:disabled) {
+  background-color: var(--nova-accent);
+  border-color: var(--nova-accent);
+  color: #0B111E;
+}
+
+.nova-btn-accent {
+  background-color: var(--nova-accent);
+  border: 1px solid var(--nova-accent);
+  color: #0B111E;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.nova-btn-accent:hover:not(:disabled) {
+  background-color: var(--nova-text);
+  border-color: var(--nova-text);
+  color: #0B111E;
+}
+
+.nova-category-pill {
+  background-color: var(--nova-card);
+  color: var(--nova-text);
+  border: 1px solid var(--nova-primary);
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nova-category-pill.active,
+.nova-category-pill:hover {
+  background-color: var(--nova-accent);
+  border-color: var(--nova-text);
+  color: #0B111E;
+  font-weight: 700;
+}
+
+.nova-input {
+  background-color: #0B111E !important;
+  border: 1px solid var(--nova-primary) !important;
+  color: var(--nova-text) !important;
+}
+
+.nova-input::placeholder {
+  color: var(--nova-muted) !important;
+}
+
+.nova-input:focus {
+  border-color: var(--nova-accent) !important;
+  box-shadow: 0 0 0 0.2rem rgba(141, 181, 199, 0.25) !important;
+}
+
+.text-nova-accent {
+  color: var(--nova-accent) !important;
+}
+
+.bg-nova-dark {
+  background-color: var(--nova-bg) !important;
+}
