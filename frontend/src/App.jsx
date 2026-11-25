@@ -700,7 +700,7 @@ export default function App() {
                     className="btn nova-btn-accent w-100 py-2"
                     disabled={carrito.length === 0}
                   >
-                    Finalizar Compra y Descontar Stock
+                    Finalizar Compra
                   </button>
                 </form>
               </div>
