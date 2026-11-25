@@ -344,7 +344,7 @@ export default function App() {
             </div>
           </a>
 
-          <div className="d-flex align-items-center gap-2 ms-auto flex-wrap">
+          <div className="d-flex align-items-center gap-2 ms-auto flex-wrap nova-nav-actions">
             <button
               className={`btn btn-sm px-3 py-2 ${vista === 'tienda' ? 'nova-btn-accent' : 'nova-btn-primary'}`}
               onClick={() => setVista('tienda')}
@@ -356,7 +356,7 @@ export default function App() {
               className={`btn btn-sm px-3 py-2 ${vista === 'inventario' ? 'nova-btn-accent' : 'nova-btn-primary'}`}
               onClick={() => setVista('inventario')}
             >
-              Gestión de Inventario
+              Inventario
             </button>
 
             <button
@@ -437,7 +437,7 @@ export default function App() {
           <main className="container mb-5 flex-grow-1">
             {/* BARRA DE LAS 5 CATEGORÍAS + FILTRO DE PROMOCIONES */}
             <div className="d-flex flex-wrap gap-2 mb-4 align-items-center justify-content-between">
-              <div className="d-flex flex-wrap gap-2 align-items-center">
+              <div className="d-flex flex-wrap gap-2 align-items-center nova-category-scroll">
                 <button
                   className={`btn nova-category-pill ${categoriaActiva === 'TODAS' && !soloOfertas ? 'active' : ''}`}
                   onClick={() => {
@@ -486,7 +486,7 @@ export default function App() {
                   const tieneDescuento = Number(prod.descuento_porcentaje || 0) > 0
                   const precioFinal = obtenerPrecioFinal(prod)
                   return (
-                    <div key={prod.id} className="col-sm-6 col-lg-3">
+                    <div key={prod.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
                       <div className="card nova-card h-100 d-flex flex-column overflow-hidden">
                         <div
                           className="position-relative"
@@ -604,7 +604,7 @@ export default function App() {
                   {recomendados.map((rec) => {
                     const precioRec = obtenerPrecioFinal(rec)
                     return (
-                      <div key={rec.id} className="col-sm-6 col-lg-3">
+                      <div key={rec.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div
                           className="p-3 rounded h-100 d-flex flex-column justify-content-between"
                           style={{ backgroundColor: '#132B47', border: '1px solid #8DB5C7' }}
@@ -889,11 +889,11 @@ export default function App() {
                       return (
                         <div
                           key={item.id}
-                          className="d-flex justify-content-between align-items-center p-3 rounded"
+                          className="d-flex justify-content-between align-items-center p-3 rounded nova-cart-item"
                           style={{ backgroundColor: '#0B111E', border: '1px solid #23536F' }}
                         >
                           <div>
-                            <div className="d-flex align-items-center gap-2">
+                            <div className="d-flex align-items-center gap-2 flex-wrap">
                               <h6 className="fw-bold mb-1">{item.nombre}</h6>
                               {item.descuento_porcentaje > 0 && (
                                 <span
@@ -909,7 +909,7 @@ export default function App() {
                             </small>
                           </div>
 
-                          <div className="d-flex align-items-center gap-3">
+                          <div className="d-flex align-items-center gap-3 nova-cart-controls">
                             <div className="btn-group btn-group-sm">
                               <button
                                 className="btn nova-btn-primary"
