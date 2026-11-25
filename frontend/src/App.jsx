@@ -410,7 +410,7 @@ export default function App() {
                     className="badge mb-2 px-3 py-2"
                     style={{ backgroundColor: '#23536F', color: '#F0EFEA', border: '1px solid #8DB5C7' }}
                   >
-                    E-COMMERCE FULL-STACK • OFERTAS FLASH & RECOMENDACIÓN INTELIGENTE
+                    TECNOLOGÍA PREMIUM • ENVÍOS A TODO EL PERÚ
                   </span>
                   <h1 className="display-5 fw-bold mb-2" style={{ color: '#F0EFEA' }}>
                     Tecnología de Vanguardia con{' '}
@@ -587,7 +587,7 @@ export default function App() {
                       className="badge mb-1"
                       style={{ backgroundColor: '#23536F', color: '#8DB5C7', border: '1px solid #8DB5C7' }}
                     >
-                      MOTOR DE RECOMENDACIÓN INTELIGENTE
+                      SELECCIÓN PERSONALIZADA
                     </span>
                     <h4 className="fw-bold mb-0" style={{ color: '#F0EFEA' }}>
                       Recomendados para Ti{' '}
@@ -596,7 +596,7 @@ export default function App() {
                     </h4>
                   </div>
                   <small style={{ color: '#A9C2CE' }}>
-                    Sugerencias basadas en tendencias, categoría activa y disponibilidad de stock
+                    Los gadgets favoritos de nuestros clientes esta semana
                   </small>
                 </div>
 
@@ -671,9 +671,6 @@ export default function App() {
                 <div className="d-flex justify-content-between align-items-center mb-3">
                   <div>
                     <h4 className="fw-bold mb-0">Panel de Control de Inventario y Promociones</h4>
-                    <small style={{ color: '#8DB5C7' }}>
-                      Ajusta existencias y descuentos en tiempo real (PATCH /api/productos/)
-                    </small>
                   </div>
                   <span className="badge px-3 py-2" style={{ backgroundColor: '#23536F', color: '#F0EFEA' }}>
                     {productos.length} Productos Registrados
@@ -767,10 +764,7 @@ export default function App() {
             {/* FORMULARIO PARA AGREGAR NUEVO PRODUCTO */}
             <div className="col-lg-4">
               <div className="nova-card p-4">
-                <h5 className="fw-bold mb-1">Registrar Nuevo Gadget</h5>
-                <small className="d-block mb-3" style={{ color: '#8DB5C7' }}>
-                  Conectado a POST /api/productos/
-                </small>
+                <h5 className="fw-bold mb-3">Registrar Nuevo Gadget</h5>
 
                 <form onSubmit={crearProducto}>
                   <div className="mb-3">
@@ -949,10 +943,7 @@ export default function App() {
               {/* RECOMENDACIONES CRUZADAS EN EL CARRITO (CROSS-SELLING) */}
               {recomendados.length > 0 && (
                 <div className="nova-card p-4">
-                  <h5 className="fw-bold mb-1">Frecuentemente Comprados Juntos</h5>
-                  <small className="d-block mb-3" style={{ color: '#8DB5C7' }}>
-                    Recomendaciones inteligentes basadas en los artículos de tu carrito
-                  </small>
+                  <h5 className="fw-bold mb-3">Frecuentemente Comprados Juntos</h5>
                   <div className="row g-3">
                     {recomendados.slice(0, 2).map((rec) => (
                       <div key={rec.id} className="col-md-6">
@@ -982,10 +973,7 @@ export default function App() {
 
             <div className="col-lg-5">
               <div className="nova-card p-4">
-                <h5 className="fw-bold mb-1">Confirmar Pedido</h5>
-                <small className="d-block mb-3" style={{ color: '#8DB5C7' }}>
-                  Aplica tus cupones promocionales y finaliza tu compra
-                </small>
+                <h5 className="fw-bold mb-3">Confirmar Pedido</h5>
 
                 {/* CUPÓN DE DESCUENTO (MARKETING) */}
                 <form onSubmit={aplicarCupon} className="mb-3">
