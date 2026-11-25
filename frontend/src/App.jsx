@@ -59,8 +59,8 @@ export default function App() {
         setNuevoProd((prev) => ({ ...prev, categoria: resCat.data[0].id }))
       }
     } catch (error) {
-      console.error('Error conectando con el backend:', error)
-      mostrarAlerta('No se pudo conectar con el servidor Backend.', 'danger')
+      console.error('Error al cargar el catálogo:', error)
+      mostrarAlerta('El catálogo no está disponible en este momento. Intenta nuevamente.', 'danger')
     } finally {
       setCargando(false)
     }
@@ -214,7 +214,7 @@ export default function App() {
       }
 
       const res = await axios.post(`${API_URL}/pedidos/`, payload)
-      mostrarAlerta(`¡Pedido #${res.data.id} registrado con éxito! El stock ha sido actualizado.`, 'success')
+      mostrarAlerta(`¡Gracias por tu compra! Tu pedido #${res.data.id} ha sido confirmado.`, 'success')
       setCarrito([])
       setCuponAplicado(null)
       setCodigoCupon('')
@@ -417,8 +417,8 @@ export default function App() {
                     <span style={{ color: '#8DB5C7' }}>NovaTech Gadgets</span>
                   </h1>
                   <p className="lead mb-0" style={{ color: '#A9C2CE' }}>
-                    Explora nuestras 5 categorías especializadas con descuentos exclusivos en tiempo real
-                    y recomendaciones personalizadas según tus preferencias.
+                    Descubre lo último en audio inalámbrico, smartwatches, hogar inteligente,
+                    carga rápida y accesorios con garantía oficial.
                   </p>
                 </div>
                 <div className="col-lg-4">
@@ -840,7 +840,7 @@ export default function App() {
                       className="form-control nova-input"
                       value={nuevoProd.imagen_url}
                       onChange={(e) => setNuevoProd({ ...nuevoProd, imagen_url: e.target.value })}
-                      placeholder="https://images.unsplash.com/..."
+                      placeholder="https://..."
                     />
                   </div>
 
