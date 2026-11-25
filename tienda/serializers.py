@@ -8,10 +8,17 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
 class ProductoSerializer(serializers.ModelSerializer):
     categoria_nombre = serializers.ReadOnlyField(source='categoria.nombre')
+    precio_final = serializers.SerializerMethodField()
 
     class Meta:
         model = Producto
-        fields = ['id', 'categoria', 'categoria_nombre', 'nombre', 'descripcion', 'precio', 'stock', 'imagen_url', 'destacado']
+        fields = ['id', 'categoria', 'categoria_nombre', 'nombre', 'descripcion', 'precio', 'precio_final', 'stock', 'imagen_url', 'destacado', 'descuento_porcentaje']
+
+    def get_precio_final(self, obj):
+        if obj.descuento_porcentaje and obj.descuento_porcentaje > 0:
+            factor = (100 - obj.descuento_porcentaje) / 100
+            return round(float(obj.precio) * factor, 2)
+        return float(obj.precio)
 
 class DetallePedidoInputSerializer(serializers.Serializer):
     producto_id = serializers.IntegerField()

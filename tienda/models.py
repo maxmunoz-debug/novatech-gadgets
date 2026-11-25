@@ -15,6 +15,7 @@ class Producto(models.Model):
     stock = models.PositiveIntegerField(default=10)
     imagen_url = models.URLField(max_length=500, blank=True)
     destacado = models.BooleanField(default=False)
+    descuento_porcentaje = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return f"{self.nombre} (Stock: {self.stock})"
